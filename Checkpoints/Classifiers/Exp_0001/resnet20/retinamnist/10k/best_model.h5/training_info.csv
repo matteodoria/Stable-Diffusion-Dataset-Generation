@@ -1,0 +1,2 @@
+Total Training Time (s),Average Epoch Time (s),Best Epoch,Best Score,Inference Time (s),Number of Parameters,Number of MACs
+150.8432433605194,4.130013949341244,10,0.5166666507720947,0.447542667388916,4290245,492967424
