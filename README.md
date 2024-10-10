@@ -15,16 +15,16 @@ The figures below show real and synthetic images for each class of Cifar10.
 
 Class | Real Images                                       | Synthetic Images
 ---|---------------------------------------------------| ----
-CLASS 0| ![](Images/cifar10/real/cifar10_class0.png) | ![](Images/cifar10/synth/class0_synth.png)
-CLASS 1| ![](Images/cifar10/real/cifar10_class1.png) | ![](Images/cifar10/synth/class1_synth.png)
-CLASS 2| ![](Images/cifar10/real/cifar10_class2.png) | ![](Images/cifar10/synth/class2_synth.png)
-CLASS 3| ![](Images/cifar10/real/cifar10_class3.png) | ![](Images/cifar10/synth/class3_synth.png)
-CLASS 4| ![](Images/cifar10/real/cifar10_class4.png) | ![](Images/cifar10/synth/class4_synth.png)
-CLASS 5| ![](Images/cifar10/real/cifar10_class5.png) | ![](Images/cifar10/synth/class5_synth.png)
-CLASS 6| ![](Images/cifar10/real/cifar10_class6.png) | ![](Images/cifar10/synth/class6_synth.png)
-CLASS 7| ![](Images/cifar10/real/cifar10_class7.png) | ![](Images/cifar10/synth/class7_synth.png)
-CLASS 8| ![](Images/cifar10/real/cifar10_class8.png) | ![](Images/cifar10/synth/class8_synth.png)
-CLASS 9| ![](Images/cifar10/real/cifar10_class9.png) | ![](Images/cifar10/synth/class9_synth.png)
+airplane| ![](Images/cifar10/real/cifar10_class0.png) | ![](Images/cifar10/synth/class0_synth.png)
+automobile| ![](Images/cifar10/real/cifar10_class1.png) | ![](Images/cifar10/synth/class1_synth.png)
+bird| ![](Images/cifar10/real/cifar10_class2.png) | ![](Images/cifar10/synth/class2_synth.png)
+cat| ![](Images/cifar10/real/cifar10_class3.png) | ![](Images/cifar10/synth/class3_synth.png)
+deer| ![](Images/cifar10/real/cifar10_class4.png) | ![](Images/cifar10/synth/class4_synth.png)
+dog| ![](Images/cifar10/real/cifar10_class5.png) | ![](Images/cifar10/synth/class5_synth.png)
+frog| ![](Images/cifar10/real/cifar10_class6.png) | ![](Images/cifar10/synth/class6_synth.png)
+horse| ![](Images/cifar10/real/cifar10_class7.png) | ![](Images/cifar10/synth/class7_synth.png)
+ship| ![](Images/cifar10/real/cifar10_class8.png) | ![](Images/cifar10/synth/class8_synth.png)
+truck| ![](Images/cifar10/real/cifar10_class9.png) | ![](Images/cifar10/synth/class9_synth.png)
 
 Other images can be found in folders [Data](Data/Synthetic) and [Images](Images).
 
