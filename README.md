@@ -1,39 +1,42 @@
 
 # Stable Diﬀusion Dataset Generation for Downstream Classification Tasks
 
-This repository contains the code relative to the paper ["Stable Diﬀusion Dataset Generation for Downstream Classification Tasks"](https://arxiv.org/abs/2405.02698), _European Symposium on Artificial Neural Networks_ (ESANN) 2024
+This repository contains the code relative to the paper "[Stable Diﬀusion Dataset Generation for Downstream Classification Tasks](https://arxiv.org/abs/2405.02698)", presented at the *European Symposium on Artificial Neural Networks* (ESANN) 2024.  
+This work is also related to my M.Sc. thesis: "[Stable diffusion adaptation for generation and total replacement of real data in downstream classification tasks](https://hdl.handle.net/10589/218608)".
 
 
 ## Goal & Results
 
-The goal of this work is to adapt a pre-trained Stable Diffusion implementation to make it generate an entire synthetic version of a dataset, suitable to be used in Downstream Classification Task.
-Stable Diffusion is mainly used to generate few high-quality images given a textual prompt. After the adaptation pipeline, it is able to generate a desired number of different and heterogeneous images, specifying only the belonging class.
+The objective of this work is to adapt a pre-trained Stable Diffusion (SD) implementation to make it generate an entire synthetic version of a dataset, suitable to be used in Downstream Classification Task.
+Stable Diffusion is primarily employed for the generation of a limited number of high-quality images given a textual prompt.
+Following the adaptation pipeline, SD is able to generate a desired number of different and heterogeneous images, specifying only the belonging class.
 
-Results show that generated synthetic datasets are very similar to the real counterparts from a visual point of view and in a third of the studied cases larger synthtic datasets perform better than the original ones in the Downstream Classification Task.
+Results demonstrate that the generated synthetic datasets are visually similar to their real-world counterparts and, 
+in a third of the studied cases, larger synthetic datasets outperform the originals in the Downstream Classification Task.
 
 The figures below show real and synthetic images for each class of Cifar10.
 
-Class | Real Images                                       | Synthetic Images
----|---------------------------------------------------| ----
-airplane| ![](Images/cifar10/real/cifar10_class0.png) | ![](Images/cifar10/synth/class0_synth.png)
-automobile| ![](Images/cifar10/real/cifar10_class1.png) | ![](Images/cifar10/synth/class1_synth.png)
-bird| ![](Images/cifar10/real/cifar10_class2.png) | ![](Images/cifar10/synth/class2_synth.png)
-cat| ![](Images/cifar10/real/cifar10_class3.png) | ![](Images/cifar10/synth/class3_synth.png)
-deer| ![](Images/cifar10/real/cifar10_class4.png) | ![](Images/cifar10/synth/class4_synth.png)
-dog| ![](Images/cifar10/real/cifar10_class5.png) | ![](Images/cifar10/synth/class5_synth.png)
-frog| ![](Images/cifar10/real/cifar10_class6.png) | ![](Images/cifar10/synth/class6_synth.png)
-horse| ![](Images/cifar10/real/cifar10_class7.png) | ![](Images/cifar10/synth/class7_synth.png)
-ship| ![](Images/cifar10/real/cifar10_class8.png) | ![](Images/cifar10/synth/class8_synth.png)
-truck| ![](Images/cifar10/real/cifar10_class9.png) | ![](Images/cifar10/synth/class9_synth.png)
+| Class     | Real Images                                       | Synthetic Images                           |
+|-----------|---------------------------------------------------|--------------------------------------------|
+| airplane  | ![](Images/cifar10/real/cifar10_class0.png) | ![](Images/cifar10/synth/class0_synth.png) |
+| automobile | ![](Images/cifar10/real/cifar10_class1.png) | ![](Images/cifar10/synth/class1_synth.png) |
+| bird      | ![](Images/cifar10/real/cifar10_class2.png) | ![](Images/cifar10/synth/class2_synth.png) |
+| cat       | ![](Images/cifar10/real/cifar10_class3.png) | ![](Images/cifar10/synth/class3_synth.png) |
+| deer      | ![](Images/cifar10/real/cifar10_class4.png) | ![](Images/cifar10/synth/class4_synth.png) |
+| dog       | ![](Images/cifar10/real/cifar10_class5.png) | ![](Images/cifar10/synth/class5_synth.png) |
+| frog      | ![](Images/cifar10/real/cifar10_class6.png) | ![](Images/cifar10/synth/class6_synth.png) |
+| horse     | ![](Images/cifar10/real/cifar10_class7.png) | ![](Images/cifar10/synth/class7_synth.png) |
+| ship      | ![](Images/cifar10/real/cifar10_class8.png) | ![](Images/cifar10/synth/class8_synth.png) |
+| truck     | ![](Images/cifar10/real/cifar10_class9.png) | ![](Images/cifar10/synth/class9_synth.png) |
 
 Other images can be found in folders [Data](Data/Synthetic) and [Images](Images).
 
 ### Optimization pipeline
-The figure below shows that the optimization pipeline makes the Stable Diffusion model improve its ability to 
-generate a suitable dataset for the classification task.  
+The figure below illustrates the enhancement in the Stable Diffusion model's capacity to generate a suitable dataset
+for classification tasks through the optimisation pipeline.  
 The only step that does not always show improvement is the third one, but it is foreseeable because the hyperparameters
-are not optimized for the Diffusion Model after the Fine-Tuning. In fact, after the final optimization we reach the best
-CAS values for each dataset.
+are not optimized for the Diffusion Model after the Fine-Tuning. In fact, after the final optimisation we reach the best
+[CAS](https://arxiv.org/abs/1905.10887) values for each dataset.
 
 ![](optimization_plots/top_1.png)
 ![](optimization_plots/top_5.png)
@@ -41,7 +44,7 @@ CAS values for each dataset.
 ### CAS Results
 
 The CAS results allows us to understand if synthetic datasets can replace real ones in the Downstream Classification Task.
-For macro datasets (Cifar10, Cifar100), increasing the cardinality of the synthetic dataset helps the classifier to perform 
+In the case of macro datasets (Cifar10, Cifar100), increasing the cardinality of the synthetic dataset helps the classifier to perform 
 each step better (for Cifar10, even better than the real one).
 
 **CIFAR10**  
@@ -49,9 +52,9 @@ each step better (for Cifar10, even better than the real one).
 **CIFAR100**  
 ![CIFAR100](CAS%20Results/CAS_plots/cifar100.png "CIFAR100")  
 
-For micro datasets, such as the Medical ones, the increasing cardinality cannot compensate for the lack of quality of 
-generated images. So, future works can focus on improving the pipeline to obtain better results in such cases.  
-However, this work is a first solution also to solve the data scarcity issue.  
+For what concerns micro datasets, such as the medical ones, the increasing cardinality cannot compensate for the lack of quality of 
+generated images. Therefore, future works can focus on improving the pipeline to obtain better results in such cases.  
+Nevertheless, this work represents also a first solution to address the data scarcity issue.  
 
 **PATHMNIST**  
 ![PATHMNIST](CAS%20Results/CAS_plots/pathmnist.png "PATHMNIST")  
@@ -64,10 +67,12 @@ The code is structured as followed:
 - [SD_adapting.py](SD_adapting.py): code for adapting Stable Diffusion for our goal. It allows to perform either Transfer Learning of the new Class Encoder or Fine-Tuning of the pre-trained Diffusion Model
 - [hyp_opt.py](hyp_opt.py): code for performing hyperparameters Bayesian optimization, either after Transfer Learning or Fine-Tuning, and/or visualize results
 - [generate_dataset.py](generate_dataset.py): code for generating a synthetic dataset of the desired cardinality, specifying the original dataset and the hyperparameters
-- [classifier_training.py](classifier_training.py): code for training a classifier using the real or a synthetic dataset and testing its performances on the real test set ([CAS](https://arxiv.org/abs/1905.10887))
+- [classifier_training.py](classifier_training.py): code for training a classifier using the real or a synthetic dataset and testing its performances on the real test set (CAS)
 - [result_plot.ipynb](result_plot.ipynb): Jupyter notebook for plotting results
 - CAS Results: folder containing the test accuracies, the pipeline optimization accuracies progress and the CAS plots
-- Checkpoints: folder containing the weights for the classifier trained, for each case, on the real dataset and for increasing size synthetic datasets and the best epochs weights for the Class Encoder and Diffusion Model (for each dataset)
+- Checkpoints: folder containing
+  - the classifier trained weights, for each case, on the real dataset and for increasing size synthetic datasets
+  - the best epochs weights, for each dataset, for the Class Encoder and Diffusion Model (due to the dimension of the Diffusion Model weight files, inside the folder there's a *link.txt* file containing the link to download the file)
 - Data: folder containing the code for loading each studied dataset and some images for each synthetic dataset
 - Models: folder containing the codes for loading the necessary Keras models (ResNet20, Stable Diffusion, Class Encoder)
 - optimization plots: folder containing for each dataset and for both the optimization phases the graphs generated by the optimization tool
