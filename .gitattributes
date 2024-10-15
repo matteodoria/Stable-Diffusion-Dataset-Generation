@@ -3,3 +3,5 @@
 
 *.md linguist-documentation=true
 *.lock linguist-vendored=true
+
+* linguist-language=Python
