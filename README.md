@@ -1,7 +1,7 @@
 
 # Stable Diﬀusion Dataset Generation for Downstream Classification Tasks
 
-This repository contains the code relative to the paper "[Stable Diﬀusion Dataset Generation for Downstream Classification Tasks](https://arxiv.org/abs/2405.02698)", presented at the *European Symposium on Artificial Neural Networks* (ESANN) 2024.  
+This repository contains the code relative to the paper "[Stable Diﬀusion Dataset Generation for Downstream Classification Tasks](https://www.esann.org/sites/default/files/proceedings/2024/ES2024-100.pdf)", presented at the *European Symposium on Artificial Neural Networks* (ESANN) 2024.  
 This work is also related to my M.Sc. thesis: "[Stable diffusion adaptation for generation and total replacement of real data in downstream classification tasks](https://hdl.handle.net/10589/218608)".
 
 
@@ -153,7 +153,7 @@ Follow these steps:
   - --inf_steps: The number of inference steps during image generation. (Default 50)
   - --ugs: The Unconditional Guidance Scale (UGS) value used for image generation. (Default 7.5)
 
-Example:
+  Example:
    ```bash
     python generate_dataset.py --dataset cifar100 --img_total 40000 --enc_epoch 25 --dif_epoch 5 --inf_steps 20 --ugs 1.0 --exp 0001  
   ```
@@ -167,9 +167,9 @@ Example:
   - --epochs: The number of epochs for training. (Default 100)
   - --classifier: The classifier architecture to use for training. (Default resnet20)
   - --train: Whether to perform training. If True (Default), the classifier will be trained on the dataset.
-  - --test: --test: Whether to perform testing. If True (Default), the trained classifier will be evaluated on the test set.
-
-Example:
+  - --test: --test: Whether to perform testing. If True (Default), the trained classifier will be evaluated on the test set. 
+  
+  Example:
    ```bash
     python classifier_training.py --dataset bloodmnist --synthetic True --take 4 --test False
   ```
